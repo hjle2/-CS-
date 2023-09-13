@@ -1,9 +1,12 @@
 function createReactiveObject(target, callback) { 
     const proxy = new Proxy(target, {
+        // target 객체(obj)의 속성(prop)을 값(value)으로 변경하는 함수
         set(obj, prop, value){
+            // 값(value)가 기존의 속성 값(obj[prop])과 다르면,
             if(value !== obj[prop]){
                 const prev = obj[prop]
-                obj[prop] = value 
+                obj[prop] = value
+                // callback함수 호출
                 callback(`${prop}가 [${prev}] >> [${value}] 로 변경되었습니다`)
             }
             return true
