@@ -14,6 +14,7 @@ function createReactiveObject(target, callback) {
 const a = {
     "형규" : "솔로"
 } 
+// b는 프록시 객체
 const b = createReactiveObject(a, console.log)
 b.형규 = "솔로"
 b.형규 = "커플"
