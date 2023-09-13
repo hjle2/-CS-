@@ -16,6 +16,5 @@ const a = {
 } 
 // b는 프록시 객체
 const b = createReactiveObject(a, console.log)
-b.형규 = "솔로"
 b.형규 = "커플"
 // 형규가 [솔로] >> [커플] 로 변경되었습니다
